@@ -11,7 +11,7 @@ class Coin: RollingTool
 {
     override fun roll()
     {
-        var roll = Random.nextInt(1,2)
+        var roll = Random.nextInt(1,3)
         when(roll)
         {
             1->println("Heads")
@@ -25,7 +25,7 @@ class Dice: RollingTool
 {
     override fun roll()
     {
-        var roll = Random.nextInt(1,6)
+        var roll = Random.nextInt(1,7)
         println(roll)
     }
 }
