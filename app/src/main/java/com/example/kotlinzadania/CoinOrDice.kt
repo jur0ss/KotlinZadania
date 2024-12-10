@@ -32,10 +32,20 @@ class Dice: RollingTool
 
 fun main()
 {
-    var dice = Dice()
-    dice.roll()
 
-    var coin = Coin()
-    coin.roll()
+    println("Rzut kostką, czy rzut monetą?: k - kostka | m - moneta")
+    var choice = readln()
+    if (choice=="k") {
+        var dice = Dice()
+        dice.roll()
+    }
+    else if (choice=="m") {
+        var coin = Coin()
+        coin.roll()
+    }
+    else
+    {
+        "Błąd"
+    }
 }
 
