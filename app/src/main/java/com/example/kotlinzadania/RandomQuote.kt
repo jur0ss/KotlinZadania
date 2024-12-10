@@ -4,7 +4,7 @@ import kotlin.random.Random
 
 object Quotes
 {
-    val quotes = mutableListOf<String>()
+    val quotes = mutableListOf<String>("elo","siema","cześć")
 
     fun addQuote()
     {
@@ -12,4 +12,15 @@ object Quotes
         quotes.add(readln())
     }
 
+    fun getRandomQuote()
+    {
+        var rand = Random.nextInt(0,quotes.size)
+        println("Wylosowany cytat to: "+quotes[rand])
+    }
+
+}
+
+fun main()
+{
+    Quotes.getRandomQuote()
 }
