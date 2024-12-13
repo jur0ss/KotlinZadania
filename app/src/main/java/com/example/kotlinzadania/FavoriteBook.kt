@@ -93,6 +93,8 @@ fun main()
 {
     while (true)
     {
-        println("Wybierz opcję: 1 - Dodaj ksiązkę")
+        println("Wybierz opcję: 1 - Dodaj ksiązkę | 2 - Usuń książkę | 3 - Pofiltruj po autorze | " +
+                "4 - Pofiltruj po podanym roku | 5 - Posortuj alfabetycznie po tytule | 6 - Wyświetl książki")
+        var choice = readln().toInt()
     }
 }
