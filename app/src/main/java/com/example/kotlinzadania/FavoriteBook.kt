@@ -45,6 +45,7 @@ object BookManager
         println("Podaj autora: ")
         var a = readln()
         var filtered = books.filter { it.author == a }
+        println("O to książki autora $a: ")
         filtered.forEach { println(it) }
 
     }
@@ -54,11 +55,20 @@ object BookManager
         println("Podaj rok: ")
         var y = readln().toInt()
         var filtered = books.filter{ it.year == y }
+        println("Oto książki z roku $y: ")
         filtered.forEach{println(it)}
+    }
+
+    fun sortedByTitle()
+    {
+        var sorted = books.sortedBy{it.title}
+        println("Oto twoje książki posortowane alfabetycznie po tytule: ")
+        sorted.forEach{println(it)}
     }
 
     fun showBooks()
     {
+        println("To twoje ulubione książki: ")
         books.forEach{println(it)}
     }
 }
@@ -66,4 +76,5 @@ object BookManager
 fun main()
 {
     BookManager.showBooks()
+    BookManager.sortedByTitle()
 }
