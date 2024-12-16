@@ -37,5 +37,29 @@ class Cloudy: Weather
 
 fun main()
 {
+    val cities =
+        mutableListOf(
+            City("Warszawa"),
+            City("Kraków"),
+            City("Gdańsk"),
+            City("Wrocław"),
+            City("Poznań"),
+            City("Łódź"),
+            City("Szczecin"),
+            City("Bydgoszcz"),
+            City("Lublin"),
+            City("Białystok"),
+            City("Katowice"),
+            City("Gdynia"),
+            City("Toruń"),
+            City("Opole"),
+            City("Rzeszów"),
+            City("Zielona Góra"),
+            City("Olsztyn"),
+            City("Gliwice"),
+            City("Częstochowa"),
+            City("Radom")
+        )
+
 
 }
