@@ -1,5 +1,8 @@
 package com.example.kotlinzadania
 
+import kotlin.random.Random
+
+
 data class City (val name: String)
 
 interface Weather
@@ -10,28 +13,40 @@ interface Weather
 class Sunny: Weather
 {
     override fun showWeather() {
-        println("Jutro będzie słonecznie")
+        println("Będzie słonecznie")
     }
 }
 
 class Rainy: Weather
 {
     override fun showWeather() {
-        println("Jutro będzie deszczowo")
+        println("Będzie deszczowo")
     }
 }
 
 class Snowy: Weather
 {
     override fun showWeather() {
-        println("Jutro będzie padał śnieg")
+        println("Będzie padał śnieg")
     }
 }
 
 class Cloudy: Weather
 {
     override fun showWeather() {
-        println("Jutro będzie zachmurzenie")
+        println("Będzie zachmurzenie")
+    }
+}
+
+fun randomWeather(): Weather
+{
+    return when(Random.nextInt(1,5))
+    {
+        1 -> Sunny()
+        2 -> Rainy()
+        3 -> Snowy()
+        4 -> Cloudy()
+        else -> Sunny()
     }
 }
 
@@ -60,6 +75,19 @@ fun main()
             City("Częstochowa"),
             City("Radom")
         )
+
+    println("Prognoza pogody na jutro: ")
+    var i = 0
+    while (i<cities.size)
+    {
+        var city = cities[i]
+        var weather = randomWeather()
+        println("${city.name}: ")
+        weather.showWeather()
+        i++
+    }
+
+
 
 
 }
