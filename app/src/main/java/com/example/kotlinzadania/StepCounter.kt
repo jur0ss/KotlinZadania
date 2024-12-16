@@ -17,9 +17,21 @@ class StepCounter
         steps = 0
     }
 
+    fun showSteps()
+    {
+        println(steps)
+    }
+
 }
 
 fun main()
 {
+    var Krokomierz = StepCounter()
+    var i = 0
+    while (i<=5000)
+    {
+        Krokomierz.addStep()
+        i++
+    }
 
 }
