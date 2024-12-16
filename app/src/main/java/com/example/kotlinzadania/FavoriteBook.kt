@@ -1,5 +1,6 @@
 package com.example.kotlinzadania
 
+import com.example.kotlinzadania.BookManager.addBook
 import com.example.kotlinzadania.BookManager.books
 
 data class Book(val title: String, val author: String, val year: Int)
@@ -96,5 +97,14 @@ fun main()
         println("Wybierz opcję: 1 - Dodaj ksiązkę | 2 - Usuń książkę | 3 - Pofiltruj po autorze | " +
                 "4 - Pofiltruj po podanym roku | 5 - Posortuj alfabetycznie po tytule | 6 - Wyświetl książki")
         var choice = readln().toInt()
+        when (choice)
+        {
+            1 -> BookManager.addBook()
+            2 -> BookManager.removeBook()
+            3 -> BookManager.filterByAuthor()
+            4 -> BookManager.filterByYear()
+            5 -> BookManager.sortedByTitle()
+            6 -> BookManager.showBooks()
+        }
     }
 }
