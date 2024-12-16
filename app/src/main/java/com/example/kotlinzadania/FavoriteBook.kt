@@ -95,7 +95,7 @@ fun main()
     while (true)
     {
         println("Wybierz opcję: 1 - Dodaj ksiązkę | 2 - Usuń książkę | 3 - Pofiltruj po autorze | " +
-                "4 - Pofiltruj po podanym roku | 5 - Posortuj alfabetycznie po tytule | 6 - Wyświetl książki")
+                "4 - Pofiltruj po podanym roku | 5 - Posortuj alfabetycznie po tytule | 6 - Wyświetl książki | 7 - Zakończ program")
         var choice = readln().toInt()
         when (choice)
         {
@@ -105,6 +105,8 @@ fun main()
             4 -> BookManager.filterByYear()
             5 -> BookManager.sortedByTitle()
             6 -> BookManager.showBooks()
+            7 -> break
+            else -> {println("Nieprawidłowa opcja")}
         }
     }
 }
