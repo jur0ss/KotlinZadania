@@ -45,11 +45,17 @@ object ResultsAnalyzer
         println("Drużyna straciła najwięcej punktów: ${maxOppPoints.oppPoints} w meczu z ${maxOppPoints.opponent}")
     }
 
+    fun diff()
+    {
+        val diff = (results.maxOf { it.points } - results.minOf { it.points })
+        println("Różnica pomiędzy największym wynikiem, a najmniejszym wynosi $diff")
+    }
+
 
 
 }
 
 fun main()
 {
-    ResultsAnalyzer.maxPoints()
+    ResultsAnalyzer.diff()
 }
