@@ -22,13 +22,6 @@ object ResultsAnalyzer
         results.forEach { println("vs ${it.opponent}: ${it.points} - ${it.oppPoints} ${it.outcome}") }
     }
 
-    fun showRecord() {
-        val wins = results.count { it.outcome == "W" }
-        val losses = results.count { it.outcome == "L" }
-
-        println("Bilans drużyny: $wins zwycięstw, $losses porażek")
-    }
-
     fun filterResults()
     {
         println("Podaj minimalny próg punktów zdobytych przez drużynę: ")
@@ -61,6 +54,13 @@ object ResultsAnalyzer
     {
         val diff = (results.maxOf { it.points } - results.minOf { it.points })
         println("Różnica pomiędzy największym wynikiem, a najmniejszym wynosi $diff")
+    }
+
+    fun showRecord() {
+        val wins = results.count { it.outcome == "W" }
+        val losses = results.count { it.outcome == "L" }
+
+        println("Bilans drużyny: $wins zwycięstw, $losses porażek")
     }
 
 
