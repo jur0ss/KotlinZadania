@@ -1,20 +1,20 @@
 package com.example.kotlinzadania
 
-data class Results(val points: Int, val opponent: String, val oppPoints: Int)
+data class Results(val points: Int, val opponent: String, val oppPoints: Int, val outcome: String)
 
 object ResultsAnalyzer
 {
     val results = mutableListOf(
-        Results(15, "Tigers", 12),
-        Results(12, "Lions", 18),
-        Results(19, "Bears", 20),
-        Results(25, "Wolves", 15),
-        Results(30, "Eagles", 22),
-        Results(8, "Sharks", 30),
-        Results(22, "Panthers", 25),
-        Results(17, "Falcons", 14),
-        Results(27, "Hawks", 19),
-        Results(14, "Cobras", 8)
+        Results(15, "Tigers", 12, "W"),
+        Results(12, "Lions", 18, "L"),
+        Results(19, "Bears", 20, "L"),
+        Results(25, "Wolves", 15, "W"),
+        Results(30, "Eagles", 22, "W"),
+        Results(8, "Sharks", 30, "L"),
+        Results(22, "Panthers", 25, "L"),
+        Results(17, "Falcons", 14, "W"),
+        Results(27, "Hawks", 19, "W"),
+        Results(14, "Cobras", 8, "W")
     )
 
     fun showResults()
