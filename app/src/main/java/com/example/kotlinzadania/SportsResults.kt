@@ -16,4 +16,19 @@ object ResultsAnalyzer
         Results(27),
         Results(14)
     )
+
+    fun filterResults()
+    {
+        println("Podaj minimalny próg punktów zdobytych przez drużynę: ")
+        val min = readln().toInt()
+        val filtered = results.filter { it.points > min }
+        println("Wyniki powyżej $min punktów: ")
+        filtered.forEach{ println("${it.points}") }
+    }
+
+}
+
+fun main()
+{
+    ResultsAnalyzer.filterResults()
 }
