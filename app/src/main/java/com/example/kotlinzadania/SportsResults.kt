@@ -1,6 +1,10 @@
 package com.example.kotlinzadania
 
-class Results
-{
+data class Results(val points: Int)
 
+object ResultsAnalyzer
+{
+    val results = mutableListOf(
+        Results(15)
+    )
 }
