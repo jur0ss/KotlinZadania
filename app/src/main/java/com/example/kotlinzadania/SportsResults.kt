@@ -22,6 +22,7 @@ object ResultsAnalyzer
         println("Podaj minimalny próg punktów zdobytych przez drużynę: ")
         val min = readln().toInt()
         val filtered = results.filter { it.points >= min }
+
         println("Wyniki powyżej $min punktów: ")
         filtered.forEach{ println("vs ${it.opponent}: ${it.points} - ${it.oppPoints}") }
     }
@@ -35,12 +36,20 @@ object ResultsAnalyzer
         println("Suma punktów zdobytych przez przeciwników: $totalOppPoints")
     }
 
+    fun maxPoints()
+    {
+        val maxPoints = results.maxBy { it.points }
+        val maxOppPoints = results.maxBy { it.oppPoints }
+
+        println("Drużyna zdobyła najwięcej punktów: ${maxPoints.points} w meczu z ${maxPoints.opponent}")
+        println("Drużyna straciła najwięcej punktów: ${maxOppPoints.oppPoints} w meczu z ${maxOppPoints.opponent}")
+    }
+
 
 
 }
 
 fun main()
 {
-    ResultsAnalyzer.filterResults()
-    ResultsAnalyzer.sumResults()
+    ResultsAnalyzer.maxPoints()
 }
