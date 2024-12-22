@@ -19,7 +19,7 @@ object ResultsAnalyzer
 
     fun showResults()
     {
-        results.forEach { println("vs ${it.opponent}: ${it.points} - ${it.oppPoints}") }
+        results.forEach { println("vs ${it.opponent}: ${it.points} - ${it.oppPoints} ${it.outcome}") }
     }
 
     fun filterResults()
@@ -57,10 +57,24 @@ object ResultsAnalyzer
     }
 
 
-
 }
 
 fun main()
 {
-    ResultsAnalyzer.showResults()
+    while(true)
+    {
+        println("Wybierz opcję: 1 - Pokaż wyniki | 2 - Filtruj wyniki po podanym progu | 3 - Pokaż sumę wyników | " +
+                "4 - Pokaż mecze z największą ilością punktów | 5 - Pokaż różnicę między najlepszym i najgorszym puntkowo meczem" +
+                "| 6 - Zakończ :")
+        var choice = readln().toInt()
+        when(choice)
+        {
+            1 -> ResultsAnalyzer.showResults()
+            2 -> ResultsAnalyzer.filterResults()
+            3 -> ResultsAnalyzer.sumResults()
+            4 -> ResultsAnalyzer.maxPoints()
+            5 -> ResultsAnalyzer.diff()
+            6 -> break
+        }
+    }
 }
