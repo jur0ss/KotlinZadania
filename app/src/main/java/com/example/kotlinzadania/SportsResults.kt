@@ -17,6 +17,11 @@ object ResultsAnalyzer
         Results(14, "Cobras", 8)
     )
 
+    fun showResults()
+    {
+        results.forEach { println("vs ${it.opponent}: ${it.points} - ${it.oppPoints}") }
+    }
+
     fun filterResults()
     {
         println("Podaj minimalny próg punktów zdobytych przez drużynę: ")
@@ -57,5 +62,5 @@ object ResultsAnalyzer
 
 fun main()
 {
-    ResultsAnalyzer.diff()
+    ResultsAnalyzer.showResults()
 }
