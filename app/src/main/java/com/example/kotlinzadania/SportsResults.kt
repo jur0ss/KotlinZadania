@@ -22,6 +22,13 @@ object ResultsAnalyzer
         results.forEach { println("vs ${it.opponent}: ${it.points} - ${it.oppPoints} ${it.outcome}") }
     }
 
+    fun showRecord() {
+        val wins = results.count { it.outcome == "W" }
+        val losses = results.count { it.outcome == "L" }
+
+        println("Bilans drużyny: $wins zwycięstw, $losses porażek")
+    }
+
     fun filterResults()
     {
         println("Podaj minimalny próg punktów zdobytych przez drużynę: ")
@@ -65,7 +72,7 @@ fun main()
     {
         println("Wybierz opcję: 1 - Pokaż wyniki | 2 - Filtruj wyniki po podanym progu | 3 - Pokaż sumę wyników | " +
                 "4 - Pokaż mecze z największą ilością punktów | 5 - Pokaż różnicę między najlepszym i najgorszym puntkowo meczem" +
-                "| 6 - Zakończ :")
+                " | 6 - Pokaż bilans | 7 - Zakończ :")
         var choice = readln().toInt()
         when(choice)
         {
@@ -74,7 +81,8 @@ fun main()
             3 -> ResultsAnalyzer.sumResults()
             4 -> ResultsAnalyzer.maxPoints()
             5 -> ResultsAnalyzer.diff()
-            6 -> break
+            6 -> ResultsAnalyzer.showRecord()
+            7 -> break
         }
     }
 }
