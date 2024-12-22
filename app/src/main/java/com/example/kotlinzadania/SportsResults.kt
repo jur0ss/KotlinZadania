@@ -14,22 +14,33 @@ object ResultsAnalyzer
         Results(22, "Panthers", 25),
         Results(17, "Falcons", 14),
         Results(27, "Hawks", 19),
-        Results(14, "Cobras", 17)
+        Results(14, "Cobras", 8)
     )
-
 
     fun filterResults()
     {
         println("Podaj minimalny próg punktów zdobytych przez drużynę: ")
         val min = readln().toInt()
-        val filtered = results.filter { it.points > min }
+        val filtered = results.filter { it.points >= min }
         println("Wyniki powyżej $min punktów: ")
         filtered.forEach{ println("vs ${it.opponent}: ${it.points} - ${it.oppPoints}") }
     }
+
+    fun sumResults()
+    {
+        val totalPoints = results.sumOf { it.points }
+        val totalOppPoints = results.sumOf { it.oppPoints }
+
+        println("Suma punktów zdobytych przez drużynę: $totalPoints")
+        println("Suma punktów zdobytych przez przeciwników: $totalOppPoints")
+    }
+
+
 
 }
 
 fun main()
 {
     ResultsAnalyzer.filterResults()
+    ResultsAnalyzer.sumResults()
 }
