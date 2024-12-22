@@ -17,6 +17,7 @@ object ResultsAnalyzer
         Results(14, "Cobras", 17)
     )
 
+
     fun filterResults()
     {
         println("Podaj minimalny próg punktów zdobytych przez drużynę: ")
